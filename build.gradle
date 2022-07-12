@@ -15,6 +15,8 @@ dependencies {
     testImplementation group: 'org.springframework', name: 'spring-test', version: '5.2.3.RELEASE'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     implementation group: 'javax.servlet.jsp.jstl', name: 'jstl', version: '1.2'
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.2.3.RELEASE'
+    implementation group: 'org.springframework', name: 'spring-tx', version: '5.2.3.RELEASE'
     // Test
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
@@ -26,8 +28,11 @@ dependencies {
     implementation group: 'log4j', name: 'log4j', version: '1.2.17'
     compileOnly group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     testCompileOnly group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
-    // DB
+    // DB - MyBatis
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '2.7.4'
+    implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.1.0.0'
+    implementation group: 'org.mybatis', name: 'mybatis-spring', version: '1.3.2'
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.4.6'
 }
 
 test {
