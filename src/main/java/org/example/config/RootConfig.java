@@ -1,4 +1,4 @@
-package org.zerock.config;
+package org.example.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -12,20 +12,18 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"org.zerock.sample"})
-@MapperScan(basePackages = {"org.zerock.mapper"})
+@ComponentScan(basePackages = {"org.example.sample"})
+@MapperScan(basePackages = {"org.example.mapper"})
 public class RootConfig {
-
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig hikariConfig = new HikariConfig();
-//		hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-//		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1799:XE");
-		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1799:XE");
+		hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1799:XE");
+//		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+//		hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1799:XE");
 		hikariConfig.setUsername("book_ex");
 		hikariConfig.setPassword("book_ex");
-
 		HikariDataSource dataSource = new HikariDataSource(hikariConfig);
 		return dataSource;
 	}
@@ -37,6 +35,3 @@ public class RootConfig {
 		return sqlSessionFactoryBean.getObject();
 	}
 }
-
-
-

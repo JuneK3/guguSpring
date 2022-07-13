@@ -1,4 +1,4 @@
-package org.zerock.sample;
+package org.example.sample;
 
 import lombok.Data;
 import lombok.Setter;
